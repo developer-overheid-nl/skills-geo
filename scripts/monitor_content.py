@@ -93,6 +93,11 @@ def normalize_html(html: str) -> str:
     html = re.sub(r"js-view-dom-id-[a-f0-9]+", "js-view-dom-id-HASH", html)
     # Drupal CMS: permissionsHash (verandert bij module/permissie updates)
     html = re.sub(r'"permissionsHash":"[a-f0-9]+"', '"permissionsHash":"HASH"', html)
+    # Liferay CMS: authToken / p_auth CSRF token (verandert per request)
+    html = re.sub(r"Liferay\.authToken\s*=\s*'[^']*'", "Liferay.authToken = 'TOKEN'", html)
+    html = re.sub(r'name="p_auth"\s+value="[^"]*"', 'name="p_auth" value="TOKEN"', html)
+    # Liferay CMS: cache-bust timestamp op resource URLs (bijv. ?t=1771832749422)
+    html = re.sub(r"\?t=\d{10,15}", "?t=TIMESTAMP", html)
     return html
 
 

@@ -92,6 +92,24 @@ class TestNormalizeHtml:
         assert "c838df03" not in result
         assert '"permissionsHash":"HASH"' in result
 
+    def test_liferay_auth_token(self):
+        html = "Liferay.authToken = '9zmfQSYt';"
+        result = normalize_html(html)
+        assert "9zmfQSYt" not in result
+        assert "Liferay.authToken = 'TOKEN'" in result
+
+    def test_liferay_p_auth_hidden_field(self):
+        html = '<input type="hidden" name="p_auth" value="9zmfQSYt"/>'
+        result = normalize_html(html)
+        assert "9zmfQSYt" not in result
+        assert 'name="p_auth" value="TOKEN"' in result
+
+    def test_liferay_cache_bust_timestamp(self):
+        html = '<img src="/documents/3-32ca-89fd?t=1771832749422" alt="Logo">'
+        result = normalize_html(html)
+        assert "1771832749422" not in result
+        assert "?t=TIMESTAMP" in result
+
     def test_gewone_content_behouden(self):
         html = "<h1>Digikoppeling Architectuur</h1><p>Standaard tekst.</p>"
         assert normalize_html(html) == html
