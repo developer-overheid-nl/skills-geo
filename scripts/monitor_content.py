@@ -98,6 +98,13 @@ def normalize_html(html: str) -> str:
     html = re.sub(r'name="p_auth"\s+value="[^"]*"', 'name="p_auth" value="TOKEN"', html)
     # Liferay CMS: cache-bust timestamp op resource URLs (bijv. ?t=1771832749422)
     html = re.sub(r"\?t=\d{10,15}", "?t=TIMESTAMP", html)
+    # Sentry tracing: trace-id en baggage veranderen per request
+    html = re.sub(r'<meta\s+name="sentry-trace"[^>]*>', "", html)
+    html = re.sub(r'<meta\s+name="baggage"\s+content="sentry-[^"]*"[^>]*>', "", html)
+    # Next.js RSC streaming: inline data scripts veranderen chunking per request
+    html = re.sub(r"<script\s*>self\.__next_f\.push\([^<]*\)</script>", "", html)
+    # Next.js/React escaped JSON nonces: \"nonce\":\"base64value\"
+    html = re.sub(r'\\"nonce\\":\\"[^"\\]*\\"', r'\\"nonce\\":\\"NONCE\\"', html)
     return html
 
 
@@ -267,43 +274,43 @@ def manage_issue(
             print(f"  Body: {change['body'][:200]}...")
         return
 
+    # Haal alle open monitoring issues op in één keer (vermijdt herhaalde API calls
+    # en omzeilt het probleem dat --search faalt op speciale tekens in titels)
+    result = subprocess.run(
+        [
+            "gh",
+            "issue",
+            "list",
+            "--label",
+            "monitoring,content-changed",
+            "--state",
+            "open",
+            "--limit",
+            "200",
+            "--json",
+            "number,title",
+        ],
+        capture_output=True,
+        text=True,
+    )
+    existing_issues: list[dict] = []
+    if result.returncode == 0 and result.stdout.strip():
+        try:
+            existing_issues = json.loads(result.stdout)
+        except json.JSONDecodeError:
+            pass
+
     for change in changes:
         title = change["title"]
         body = change["body"]
         labels = change.get("labels", "monitoring,content-changed")
 
-        # Zoek bestaande open issue met zelfde titel
-        search_title = title[:60]  # Truncate voor search
-        result = subprocess.run(
-            [
-                "gh",
-                "issue",
-                "list",
-                "--label",
-                labels,
-                "--state",
-                "open",
-                "--search",
-                search_title,
-                "--json",
-                "number,title",
-            ],
-            capture_output=True,
-            text=True,
-        )
-
-        # Zoek in de resultaten naar een issue met matchende titel-prefix
+        # Zoek bestaand issue met exact dezelfde titel
         existing_number = ""
-        if result.returncode == 0 and result.stdout.strip():
-            try:
-                issues = json.loads(result.stdout)
-                prefix = title[:40]
-                for issue in issues:
-                    if issue.get("title", "").startswith(prefix):
-                        existing_number = str(issue["number"])
-                        break
-            except (json.JSONDecodeError, KeyError):
-                pass
+        for issue in existing_issues:
+            if issue.get("title") == title:
+                existing_number = str(issue["number"])
+                break
 
         if existing_number:
             # Update bestaande issue met comment
@@ -329,6 +336,15 @@ def manage_issue(
                 capture_output=True,
                 text=True,
             )
+            if result.returncode == 0:
+                # Voeg nieuw issue toe aan lijst zodat verdere duplicaten in dezelfde run
+                # ook gevonden worden
+                try:
+                    url = result.stdout.strip()
+                    number = url.rstrip("/").split("/")[-1]
+                    existing_issues.append({"number": int(number), "title": title})
+                except (ValueError, IndexError):
+                    pass
             print(f"  Created issue: {result.stdout.strip()}")
 
 
