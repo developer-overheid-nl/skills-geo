@@ -283,3 +283,7 @@ ogr2ogr -f "GeoJSON" /tmp/panden_wgs84.geojson \
 ## Achtergrondinfo
 
 Zie [reference.md](reference.md) voor uitgebreide OGC-protocoldetails, CRS-handling (EPSG:28992/RD New), en de volledige PDOK-servicecatalogus.
+
+---
+
+> **CONCEPT** — Deze skill is in ontwikkeling en is geen officieel product. De officiële standaarden zijn altijd leidend. Zie de [verantwoording](https://github.com/developer-overheid-nl/skills-marketplace/blob/main/docs/verantwoording.md) en [disclaimer](https://github.com/developer-overheid-nl/skills-marketplace/blob/main/DISCLAIMER.md) voor meer informatie.

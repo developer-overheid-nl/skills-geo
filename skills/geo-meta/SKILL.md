@@ -246,3 +246,7 @@ Stappen om metadata te publiceren in het [Nationaal Georegister](https://www.nat
 ## Achtergrondinfo
 
 Zie [reference.md](reference.md) voor de volledige lijst van metadata-elementen, validatieregels, en het NGR-publicatieworkflow in detail.
+
+---
+
+> **CONCEPT** — Deze skill is in ontwikkeling en is geen officieel product. De officiële standaarden zijn altijd leidend. Zie de [verantwoording](https://github.com/developer-overheid-nl/skills-marketplace/blob/main/docs/verantwoording.md) en [disclaimer](https://github.com/developer-overheid-nl/skills-marketplace/blob/main/DISCLAIMER.md) voor meer informatie.

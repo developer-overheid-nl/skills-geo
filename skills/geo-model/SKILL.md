@@ -228,3 +228,7 @@ Voorbeelden:
 ## Achtergrondinfo
 
 Zie [reference.md](reference.md) voor NEN 3610 UML-details, MIM-modelleringsregels, en een uitgebreid overzicht van sectormodellen.
+
+---
+
+> **CONCEPT** — Deze skill is in ontwikkeling en is geen officieel product. De officiële standaarden zijn altijd leidend. Zie de [verantwoording](https://github.com/developer-overheid-nl/skills-marketplace/blob/main/docs/verantwoording.md) en [disclaimer](https://github.com/developer-overheid-nl/skills-marketplace/blob/main/DISCLAIMER.md) voor meer informatie.

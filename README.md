@@ -5,6 +5,8 @@
 
 [Claude Code](https://docs.anthropic.com/en/docs/claude-code) plugin voor Nederlandse geo-standaarden voor ruimtelijke data. Bevat skills voor standaarden beheerd door [Geonovum](https://www.geonovum.nl): OGC API services, metadata, informatiemodellen, INSPIRE en 3D standaarden.
 
+> **CONCEPT** — Deze plugin is in ontwikkeling en is geen officieel product van Geonovum. De officiële standaarden zijn altijd leidend. Zie de [verantwoording](https://github.com/developer-overheid-nl/skills-marketplace/blob/main/docs/verantwoording.md) en [disclaimer](https://github.com/developer-overheid-nl/skills-marketplace/blob/main/DISCLAIMER.md) voor meer informatie.
+
 ## Installeren
 
 ```bash
