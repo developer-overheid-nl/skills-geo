@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/developer-overheid-nl/skills-geo/compare/v0.2.2...v0.2.3) (2026-03-12)
+
+
+### Opgelost
+
+* strip Sharing IIFE ook wanneer ingebed in groter script blok ([#68](https://github.com/developer-overheid-nl/skills-geo/issues/68)) ([9c72c4e](https://github.com/developer-overheid-nl/skills-geo/commit/9c72c4e291e363c1e0277a0402fc76ec3e6f1338))
+
 ## [0.2.2](https://github.com/developer-overheid-nl/skills-geo/compare/v0.2.1...v0.2.2) (2026-03-09)
 
 
