@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.5](https://github.com/developer-overheid-nl/skills-geo/compare/v0.2.4...v0.2.5) (2026-03-15)
+
+
+### Opgelost
+
+* normaliseer opeenvolgende lege regels in normalize_html ([#80](https://github.com/developer-overheid-nl/skills-geo/issues/80)) ([7102922](https://github.com/developer-overheid-nl/skills-geo/commit/7102922c634d7da8b83368c1e1620ba5d71d2b5b))
+
 ## [0.2.4](https://github.com/developer-overheid-nl/skills-geo/compare/v0.2.3...v0.2.4) (2026-03-14)
 
 
