@@ -24,7 +24,7 @@ metadata:
 
 **Agent-instructie:** Deze skill helpt bij het werken met 3D geo-standaarden, van CityGML-modellering tot 3D Tiles-visualisatie. Gebruik de voorbeelden voor het benaderen van de 3D Basisvoorziening en het converteren tussen formaten. Verwijs naar `/geo-model` voor de relatie met NEN 3610 en informatiemodellen.
 
-Nederland loopt voorop in 3D geo-informatie met de [3D Basisvoorziening](https://www.pdok.nl/introductie/-/article/3d-basisvoorziening-1) — een landsdekkend 3D-model. Geonovum werkt aan standaarden voor 3D data-uitwisseling, integratie van GIS en BIM (GeoBIM), en digital twin-toepassingen. De 3D-standaarden bouwen voort op internationale OGC-standaarden zoals CityGML en 3D Tiles.
+Nederland loopt voorop in 3D geo-informatie met de [3D Basisvoorziening](https://www.pdok.nl/introductie/-/article/3d-basisvoorziening-1) — een landsdekkend 3D-model via PDOK in meerdere formaten, ook te bekijken in de [PDOK 3D Viewer](https://app.pdok.nl/3d-viewer). Geonovum werkt aan standaarden voor 3D data-uitwisseling, integratie van GIS en BIM (GeoBIM), en digital twin-toepassingen. De 3D-standaarden bouwen voort op internationale OGC-standaarden zoals CityGML en 3D Tiles.
 
 ## Standaarden Overzicht
 
@@ -175,16 +175,22 @@ tileset.json          ← Hoofdbestand (metadata + boomstructuur)
 
 ### 3D Basisvoorziening via PDOK
 
-De [3D Basisvoorziening](https://www.pdok.nl/introductie/-/article/3d-basisvoorziening-1) is het landsdekkende 3D-model van Nederland, beschikbaar via PDOK.
+De [3D Basisvoorziening](https://www.pdok.nl/introductie/-/article/3d-basisvoorziening-1) is het landsdekkende 3D-model van Nederland, beschikbaar via PDOK als 8 collecties. Brondata: BAG, BGT en AHN (4, 5 en 6). Licentie: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.nl) (data: Kadaster). Zie ook de [productbeschrijving](https://3d.kadaster.nl/productbeschrijving/) en de [PDOK 3D Viewer](https://app.pdok.nl/3d-viewer).
+
+Beschikbare formaten: OGC 3D Tiles (gebouwen, terreinen), CityJSON (3D objecten), GeoPackage (hoogte-attributen), Quantized Mesh (DTM), LASZip (DSM). Zie [reference.md](reference.md) voor de volledige collectie-tabel.
 
 ```bash
-# 3D Basisvoorziening metadata ophalen
+# Alle collecties ophalen
 curl -s "https://api.pdok.nl/kadaster/3d-basisvoorziening/ogc/v1/collections" \
   | python3 -m json.tool
 
 # 3D Tiles tileset ophalen (gebouwen)
-curl -s "https://api.pdok.nl/kadaster/3d-basisvoorziening/ogc/v1_0/collections/gebouwen/3dtiles" \
+curl -s "https://api.pdok.nl/kadaster/3d-basisvoorziening/ogc/v1/collections/gebouwen/3dtiles" \
   | python3 -m json.tool | head -30
+
+# DTM Quantized Mesh tileset (voor Cesium terrein)
+curl -s "https://api.pdok.nl/kadaster/3d-basisvoorziening/ogc/v1/collections/digitaalterreinmodel/quantized-mesh" \
+  | python3 -m json.tool | head -20
 ```
 
 ### Cesium Viewer Voorbeeld
@@ -193,8 +199,8 @@ curl -s "https://api.pdok.nl/kadaster/3d-basisvoorziening/ogc/v1_0/collections/g
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://cesium.com/downloads/cesiumjs/releases/1.113/Build/Cesium/Cesium.js"></script>
-  <link href="https://cesium.com/downloads/cesiumjs/releases/1.113/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.125/Build/Cesium/Cesium.js"></script>
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.125/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
 </head>
 <body>
   <div id="cesiumContainer" style="width:100%; height:100vh;"></div>
@@ -204,7 +210,7 @@ curl -s "https://api.pdok.nl/kadaster/3d-basisvoorziening/ogc/v1_0/collections/g
     // 3D Basisvoorziening laden
     const tileset = viewer.scene.primitives.add(
       new Cesium.Cesium3DTileset({
-        url: 'https://api.pdok.nl/kadaster/3d-basisvoorziening/ogc/v1_0/collections/gebouwen/3dtiles'
+        url: 'https://api.pdok.nl/kadaster/3d-basisvoorziening/ogc/v1/collections/gebouwen/3dtiles'
       })
     );
 
@@ -255,7 +261,7 @@ Digital twins gebruiken 3D geo-standaarden als basis:
 | Component | Standaard | Rol |
 |-----------|----------|-----|
 | 3D stadsmodel | CityGML / 3D Tiles | Visuele basis |
-| Terrein | AHN (raster) | Hoogtemodel |
+| Terrein | AHN 4/5/6 (raster) | Hoogtemodel |
 | Gebouwen | BAG + 3D Basisvoorziening | Gebouwgeometrie |
 | Infrastructuur | BGT + IMKL | Wegen, kabels, leidingen |
 | Sensordata | SensorThings API | Real-time metingen |
@@ -269,7 +275,7 @@ Digital twins gebruiken 3D geo-standaarden als basis:
 | Geometrie niet valide | Zelf-intersecties, gaten | Valideer met val3dity, repareer met tools als 3dfier |
 | CRS-mismatch bij GeoBIM | IFC lokale coordinaten | Gebruik georeferencing tools (bijv. IfcMapConversion) |
 | 3D Tiles laden traag | Tiles te groot of niet geoptimaliseerd | Gebruik geometric error goed, comprimeer met Draco |
-| LOD niet beschikbaar | Data alleen in LOD1 | Gebruik 3D Basisvoorziening (LOD1.2/1.3 landsdekkend) |
+| LOD niet beschikbaar | Data alleen in LOD1 | Gebruik 3D Basisvoorziening (LOD 2.2 landsdekkend, fallback LOD 1.3) |
 | CityJSON niet herkend | Software ondersteunt alleen CityGML/XML | Converteer met cjio (CityJSON CLI) naar GML |
 
 ## Cross-referenties

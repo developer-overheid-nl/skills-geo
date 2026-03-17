@@ -60,17 +60,20 @@ CityGML 3.0 brengt belangrijke wijzigingen:
 - Geometrie: binnenruimtes, verdiepingen, kamers
 - Toepassing: indoor navigatie, facilitair management
 
-### 3D Basisvoorziening LOD-niveaus
+### 3D Basisvoorziening Collecties
 
-De Nederlandse 3D Basisvoorziening biedt:
+De Nederlandse 3D Basisvoorziening biedt 8 collecties via de OGC API op PDOK. Brondata: BAG, BGT en AHN (4, 5 en 6). Licentie: CC BY 4.0 (data: Kadaster).
 
-| Product | LOD | Bron | Beschrijving |
-|---------|-----|------|-------------|
-| 3D Gebouwen | LOD1.2 | BAG + AHN | Gebouwen met plat dak op werkelijke hoogte |
-| 3D Gebouwen | LOD1.3 | BAG + AHN | Gebouwen met nokhoogte |
-| 3D Gebouwen | LOD2.2 | BAG + AHN + puntenwolk | Gebouwen met werkelijke dakvormen |
-| 3D Terrein | - | AHN | TIN-model van het maaiveld |
-| 3D Bomen | - | AHN + BGT | Bomen als punten met hoogte |
+| Collectie | Formaat | Bron | Beschrijving |
+|-----------|---------|------|-------------|
+| 3D Tiles Gebouwen | OGC 3D Tiles | BAG + AHN | Gebouwen LOD 2.2 (fallback LOD 1.3) voor visualisatie |
+| 3D Tiles Terreinen | OGC 3D Tiles | BGT + AHN | Terreinen, wegen en water op maaiveldniveau |
+| 3D Objecten Gebouwen | CityJSON | BAG + AHN | Gebouwen LOD 2.2 voor analyse in GIS/BIM |
+| 3D Objecten Gebouwen en Terreinen | CityJSON | BAG + BGT + AHN | Gebouwen + terreinen + water + wegen voor analyse |
+| 2D Objecten Gebouwen met hoogte | GeoPackage | BAG + AHN | 2D geometrie met hoogte-attributen per pand |
+| Digitaal Terreinmodel (DTM) | Quantized Mesh | AHN | Geïnterpoleerd maaiveld-terreinmodel |
+| DSM 20 cm | LASZip | Luchtfoto's | Oppervlaktemodel incl. objecten en vegetatie (20 cm) |
+| DSM 8 cm | LASZip | Luchtfoto's | Hoge-resolutie oppervlaktemodel (8 cm) |
 
 ## 3D Tiles Specificatie
 
@@ -196,7 +199,7 @@ Voor 3D data in Nederland:
 | ETRS89 + NAP | EPSG:7423 | ETRS89 horizontaal + NAP hoogte |
 | ETRS89 3D | EPSG:4937 | ETRS89 ellipsoidisch 3D |
 
-NAP (Normaal Amsterdams Peil) is het Nederlandse hoogtesysteem. De 3D Basisvoorziening gebruikt EPSG:7415 (RD + NAP).
+NAP (Normaal Amsterdams Peil) is het Nederlandse hoogtesysteem. De 3D Basisvoorziening gebruikt EPSG:7415 (RD + NAP). Brondata voor hoogte: AHN 4, 5 en 6.
 
 ## Python 3D Workflow
 
