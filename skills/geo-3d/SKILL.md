@@ -24,7 +24,7 @@ metadata:
 
 **Agent-instructie:** Deze skill helpt bij het werken met 3D geo-standaarden, van CityGML-modellering tot 3D Tiles-visualisatie. Gebruik de voorbeelden voor het benaderen van de 3D Basisvoorziening en het converteren tussen formaten. Verwijs naar `/geo-model` voor de relatie met NEN 3610 en informatiemodellen.
 
-Nederland loopt voorop in 3D geo-informatie met de [3D Basisvoorziening](https://www.pdok.nl/introductie/-/article/3d-basisvoorziening-1) — een landsdekkend 3D-model beschikbaar in OGC 3D Tiles, CityJSON, GeoPackage, Quantized Mesh en LASZip via PDOK. Bekijk de data direct in de [PDOK 3D Viewer](https://app.pdok.nl/3d-viewer). Geonovum werkt aan standaarden voor 3D data-uitwisseling, integratie van GIS en BIM (GeoBIM), en digital twin-toepassingen. De 3D-standaarden bouwen voort op internationale OGC-standaarden zoals CityGML en 3D Tiles.
+Nederland loopt voorop in 3D geo-informatie met de [3D Basisvoorziening](https://www.pdok.nl/introductie/-/article/3d-basisvoorziening-1) — een landsdekkend 3D-model via PDOK in meerdere formaten, ook te bekijken in de [PDOK 3D Viewer](https://app.pdok.nl/3d-viewer). Geonovum werkt aan standaarden voor 3D data-uitwisseling, integratie van GIS en BIM (GeoBIM), en digital twin-toepassingen. De 3D-standaarden bouwen voort op internationale OGC-standaarden zoals CityGML en 3D Tiles.
 
 ## Standaarden Overzicht
 
@@ -175,27 +175,22 @@ tileset.json          ← Hoofdbestand (metadata + boomstructuur)
 
 ### 3D Basisvoorziening via PDOK
 
-De [3D Basisvoorziening](https://www.pdok.nl/introductie/-/article/3d-basisvoorziening-1) is het landsdekkende 3D-model van Nederland, beschikbaar via PDOK. Brondata: BAG, BGT en AHN (4, 5 en 6). Licentie: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.nl) (data: Kadaster). Zie ook de [productbeschrijving](https://3d.kadaster.nl/productbeschrijving/) en de [PDOK 3D Viewer](https://app.pdok.nl/3d-viewer).
+De [3D Basisvoorziening](https://www.pdok.nl/introductie/-/article/3d-basisvoorziening-1) is het landsdekkende 3D-model van Nederland, beschikbaar via PDOK als 8 collecties. Brondata: BAG, BGT en AHN (4, 5 en 6). Licentie: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.nl) (data: Kadaster). Zie ook de [productbeschrijving](https://3d.kadaster.nl/productbeschrijving/) en de [PDOK 3D Viewer](https://app.pdok.nl/3d-viewer).
 
-| Collectie | Formaat | Bron | Doel |
-|-----------|---------|------|------|
-| 3D Tiles Gebouwen | OGC 3D Tiles | BAG + AHN | Visualisatie gebouwen (LOD 2.2, fallback LOD 1.3) |
-| 3D Tiles Terreinen | OGC 3D Tiles | BGT + AHN | Visualisatie terreinen, wegen en water |
-| 3D Objecten Gebouwen | CityJSON | BAG + AHN | Analyse gebouwen in GIS/BIM |
-| 3D Objecten Gebouwen en Terreinen | CityJSON | BAG + BGT + AHN | Analyse gebouwen + terreinen |
-| 2D Objecten Gebouwen met hoogte | GeoPackage | BAG + AHN | Hoogte-attributen per pand |
-| Digitaal Terreinmodel (DTM) | Quantized Mesh | AHN | Maaiveld-terreinmodel voor Cesium |
-| DSM 20 cm | LASZip | Luchtfoto's | Oppervlaktemodel incl. objecten en vegetatie |
-| DSM 8 cm | LASZip | Luchtfoto's | Hoge-resolutie oppervlaktemodel |
+Beschikbare formaten: OGC 3D Tiles (gebouwen, terreinen), CityJSON (3D objecten), GeoPackage (hoogte-attributen), Quantized Mesh (DTM), LASZip (DSM). Zie [reference.md](reference.md) voor de volledige collectie-tabel.
 
 ```bash
-# 3D Basisvoorziening metadata ophalen
+# Alle collecties ophalen
 curl -s "https://api.pdok.nl/kadaster/3d-basisvoorziening/ogc/v1/collections" \
   | python3 -m json.tool
 
 # 3D Tiles tileset ophalen (gebouwen)
 curl -s "https://api.pdok.nl/kadaster/3d-basisvoorziening/ogc/v1/collections/gebouwen/3dtiles" \
   | python3 -m json.tool | head -30
+
+# DTM Quantized Mesh tileset (voor Cesium terrein)
+curl -s "https://api.pdok.nl/kadaster/3d-basisvoorziening/ogc/v1/collections/digitaalterreinmodel/quantized-mesh" \
+  | python3 -m json.tool | head -20
 ```
 
 ### Cesium Viewer Voorbeeld
