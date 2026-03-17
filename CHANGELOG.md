@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.6](https://github.com/developer-overheid-nl/skills-geo/compare/v0.2.5...v0.2.6) (2026-03-17)
+
+
+### Opgelost
+
+* update geo-3d skill naar actuele PDOK 3D Basisvoorziening ([#93](https://github.com/developer-overheid-nl/skills-geo/issues/93)) ([58069e3](https://github.com/developer-overheid-nl/skills-geo/commit/58069e3caa0a265b419214753c98ad990a21808f))
+
 ## [0.2.5](https://github.com/developer-overheid-nl/skills-geo/compare/v0.2.4...v0.2.5) (2026-03-15)
 
 
