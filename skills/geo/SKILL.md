@@ -78,6 +78,17 @@ De geo-standaarden staan op de ['pas-toe-of-leg-uit'-lijst](https://www.forumsta
 | [Geonovum/IMGeo](https://github.com/Geonovum/IMGeo) | Informatiemodel Geografie (BGT/IMGeo) | [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/legalcode.en) |
 | [Geonovum/MIM-Werkomgeving](https://github.com/Geonovum/MIM-Werkomgeving) | Metamodel Informatie Modellering | [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/legalcode.en) |
 
+## Aanvullende Standaarden
+
+Naast de domein-skills hierboven beheert Geonovum ook:
+
+| Standaard | Beschrijving |
+|-----------|-------------|
+| [Raamwerk Geo-Standaarden](https://docs.geostandaarden.nl/raamwerk/def-hr-raamwerk-20250109/) | Overzichtsdocument: hoe alle geo-standaarden samenhangen |
+| [GeoPackage](https://www.geonovum.nl/geo-standaarden/geopackage) | Verplicht formaat voor geodata-downloads bij de overheid (sinds 2019) |
+| [NL-SBB](https://docs.geostandaarden.nl/nl-sbb/def-st-nl-sbb-20230614/) | Standaard voor het beschrijven van begrippen |
+| [IMX-Geo](https://geonovum.github.io/IMX-Geo/) | Semantisch model voor samenhang basis-/kernregistraties (Kadaster + Geonovum) |
+
 ## Belangrijke Links
 
 - **Gepubliceerde standaarden:** [docs.geostandaarden.nl](https://docs.geostandaarden.nl/)

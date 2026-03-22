@@ -68,12 +68,12 @@ De Nederlandse 3D Basisvoorziening biedt 8 collecties via de OGC API op PDOK. Br
 |-----------|---------|------|-------------|
 | 3D Tiles Gebouwen | OGC 3D Tiles | BAG + AHN | Gebouwen LOD 2.2 (fallback LOD 1.3) voor visualisatie |
 | 3D Tiles Terreinen | OGC 3D Tiles | BGT + AHN | Terreinen, wegen en water op maaiveldniveau |
-| 3D Objecten Gebouwen | CityJSON | BAG + AHN | Gebouwen LOD 2.2 voor analyse in GIS/BIM |
+| 3D Objecten Gebouwen | CityJSON | BAG + AHN | Gebouwen LOD 2.2 voor analyse in GIS/BIM (IFC converter beschikbaar voor BIM-software) |
 | 3D Objecten Gebouwen en Terreinen | CityJSON | BAG + BGT + AHN | Gebouwen + terreinen + water + wegen voor analyse |
 | 2D Objecten Gebouwen met hoogte | GeoPackage | BAG + AHN | 2D geometrie met hoogte-attributen per pand |
 | Digitaal Terreinmodel (DTM) | Quantized Mesh | AHN | Geïnterpoleerd maaiveld-terreinmodel |
-| DSM 20 cm | LASZip | Luchtfoto's | Oppervlaktemodel incl. objecten en vegetatie (20 cm) |
-| DSM 8 cm | LASZip | Luchtfoto's | Hoge-resolutie oppervlaktemodel (8 cm) |
+| DSM 20 cm | LASZip | Puntenwolken uit luchtfoto's | Oppervlaktemodel incl. objecten en vegetatie (20 cm) |
+| DSM 8 cm | LASZip | Puntenwolken uit luchtfoto's | Hoge-resolutie oppervlaktemodel (8 cm) |
 
 ## 3D Tiles Specificatie
 

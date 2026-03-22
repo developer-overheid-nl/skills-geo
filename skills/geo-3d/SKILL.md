@@ -175,9 +175,11 @@ tileset.json          ← Hoofdbestand (metadata + boomstructuur)
 
 ### 3D Basisvoorziening via PDOK
 
-De [3D Basisvoorziening](https://www.pdok.nl/introductie/-/article/3d-basisvoorziening-1) is het landsdekkende 3D-model van Nederland, beschikbaar via PDOK als 8 collecties. Brondata: BAG, BGT en AHN (4, 5 en 6). Licentie: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.nl) (data: Kadaster). Zie ook de [productbeschrijving](https://3d.kadaster.nl/productbeschrijving/) en de [PDOK 3D Viewer](https://app.pdok.nl/3d-viewer).
+De [3D Basisvoorziening](https://www.pdok.nl/introductie/-/article/3d-basisvoorziening-1) is het landsdekkende 3D-model van Nederland, beschikbaar via PDOK als 8 collecties. Brondata: BAG, BGT en AHN (4, 5 en 6). Licentie: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.nl) (data: Kadaster). Ontwikkeld door het Kadaster in samenwerking met het ministerie van VRO en de TU Delft. Zie ook de [productbeschrijving](https://3d.kadaster.nl/productbeschrijving/) en de [PDOK 3D Viewer](https://app.pdok.nl/3d-viewer).
 
-Beschikbare formaten: OGC 3D Tiles (gebouwen, terreinen), CityJSON (3D objecten), GeoPackage (hoogte-attributen), Quantized Mesh (DTM), LASZip (DSM). Zie [reference.md](reference.md) voor de volledige collectie-tabel.
+Beschikbare formaten: OGC 3D Tiles (gebouwen, terreinen), CityJSON (3D objecten, met IFC converter voor BIM-software), GeoPackage (hoogte-attributen), Quantized Mesh (DTM), LASZip (DSM). Data is beschikbaar via OGC API 3D GeoVolumes en OGC API Features. Zie [reference.md](reference.md) voor de volledige collectie-tabel.
+
+Toepassingen: geluidsmodellering, schaduwanalyse, zonnepotentie, waterafvoerberekeningen, Omgevingswet-plannen en burgercommunicatie. Fouten melden kan via [Verbeter de Kaart](https://verbeterdekaart.nl), recente meldingen staan in de dataset "3D Terugmeldingen". Vragen? Zie [Geoforum.nl](https://geoforum.nl) (categorie datasets/3d).
 
 ```bash
 # Alle collecties ophalen
