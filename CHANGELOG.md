@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.7](https://github.com/developer-overheid-nl/skills-geo/compare/v0.2.6...v0.2.7) (2026-03-22)
+
+
+### Opgelost
+
+* update geo-3d en geo skills na content-wijzigingen ([#105](https://github.com/developer-overheid-nl/skills-geo/issues/105)) ([c94fba6](https://github.com/developer-overheid-nl/skills-geo/commit/c94fba6cd2eb5be00f2b9c1dd25154204f2ad493))
+
 ## [0.2.6](https://github.com/developer-overheid-nl/skills-geo/compare/v0.2.5...v0.2.6) (2026-03-17)
 
 
