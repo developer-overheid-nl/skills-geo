@@ -84,9 +84,9 @@ Naast de domein-skills hierboven beheert Geonovum ook:
 
 | Standaard | Beschrijving |
 |-----------|-------------|
-| [Raamwerk Geo-Standaarden](https://docs.geostandaarden.nl/raamwerk/def-hr-raamwerk-20250109/) | Overzichtsdocument: hoe alle geo-standaarden samenhangen |
+| [Raamwerk Geo-Standaarden](https://docs.geostandaarden.nl/rwgs/rw/) | Overzichtsdocument: hoe alle geo-standaarden samenhangen |
 | [GeoPackage](https://www.geonovum.nl/geo-standaarden/geopackage) | Verplicht formaat voor geodata-downloads bij de overheid (sinds 2019) |
-| [NL-SBB](https://docs.geostandaarden.nl/nl-sbb/def-st-nl-sbb-20230614/) | Standaard voor het beschrijven van begrippen |
+| [NL-SBB](https://docs.geostandaarden.nl/nl-sbb/nl-sbb/) | Standaard voor het beschrijven van begrippen |
 | [IMX-Geo](https://geonovum.github.io/IMX-Geo/) | Semantisch model voor samenhang basis-/kernregistraties (Kadaster + Geonovum) |
 
 ## Belangrijke Links
