@@ -5,7 +5,9 @@ description: >-
   vraagt over 'metadata', 'ISO 19115', 'ISO 19119', 'CSW',
   'NGR', 'nationaal georegister', 'Nationaal Georegister',
   'DCAT geo', 'metadata profiel', 'metadata publiceren',
-  'metadata validatie', 'geodata catalogus', 'discovery service'.
+  'metadata validatie', 'geodata catalogus', 'discovery service',
+  'MDTO', 'metagegevens duurzaam toegankelijke overheidsinformatie',
+  'SHACL', 'DCAT validatie', 'DCAT-AP-NL'.
 model: sonnet
 allowed-tools:
   - Bash(gh api *)
@@ -34,7 +36,8 @@ Metadata beschrijft geodata en -services zodat ze vindbaar, bruikbaar en beoorde
 | ISO 19119:2005 | Metadata | Beschrijving van services | Verplicht |
 | NL profiel ISO 19115 | Profiel | Nederlandse invulling van ISO 19115 | Verplicht |
 | CSW 2.0.2 | Protocol | Catalogue Service for the Web — zoeken/harvesten | Geen eigen Forum status |
-| DCAT | Vocabulaire | Data Catalog Vocabulary, geo-extensie | Aanbevolen |
+| DCAT-AP-NL | Vocabulaire | Data Catalog Vocabulary, geo-extensie via GeoDCAT-AP | Aanbevolen |
+| MDTO | Metadata | Metagegevens Duurzaam Toegankelijke Overheidsinformatie (Nationaal Archief) | Gerelateerd |
 
 ## Repositories
 
@@ -199,7 +202,19 @@ for rec_id, rec in csw.records.items():
 
 ## DCAT voor Geodata
 
-DCAT (Data Catalog Vocabulary) wordt steeds meer gebruikt naast ISO 19115. Het profiel GeoDCAT-AP biedt een mapping van ISO 19115 naar DCAT.
+DCAT (Data Catalog Vocabulary) wordt steeds meer gebruikt naast ISO 19115. Het profiel GeoDCAT-AP biedt een mapping van ISO 19115 naar DCAT. DCAT-AP-NL is het Nederlandse profiel op DCAT-AP.
+
+### Samenhang metadata standaarden
+
+Er zijn drie metadata-standaarden die elk een eigen perspectief hebben:
+
+| Standaard | Focus | Formaat | Doelgroep |
+|-----------|-------|---------|-----------|
+| ISO 19115/19119 | Geo-datasets en -services | XML | Geo-domein (NGR, INSPIRE) |
+| DCAT-AP-NL | Datacatalogi, linked data | RDF | Data.overheid.nl, Europees dataportaal |
+| MDTO | Duurzame toegankelijkheid overheidsinformatie | XML | Archivering (Archiefwet, Woo) |
+
+Belangrijke verschillen: MDTO gaat uit van informatie-objecten en bestanden, terwijl DCAT en ISO 19115 werken met datasets en distributies. Meer informatie over de samenhang staat in de [Geonovum notitie over relaties metadata standaarden](https://www.geonovum.nl/geo-standaarden/metadataprofiel-dcat-ap-nl/relaties-verschillende-metadata-standaarden).
 
 ### Verhouding ISO 19115 en DCAT
 

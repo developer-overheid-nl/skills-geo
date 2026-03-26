@@ -93,6 +93,8 @@ Het metadata-record moet voldoen aan het ISO 19115 XML-schema (gmd namespace). C
 
 ### Validatietools
 
+#### ISO XML metadata
+
 ```bash
 # Metadata valideren via de Geonovum validator
 curl -s -X POST "https://validatie.geostandaarden.nl/etf-webapp/v2/TestRuns" \
@@ -102,6 +104,34 @@ curl -s -X POST "https://validatie.geostandaarden.nl/etf-webapp/v2/TestRuns" \
 # XML-schema validatie met xmllint
 xmllint --schema http://www.isotc211.org/2005/gmd/gmd.xsd metadata.xml --noout
 ```
+
+#### DCAT metadata (SHACL-validatie)
+
+DCAT-AP profielen worden gedefinieerd in SHACL. DCAT-AP-NL bouwt voort op de SHACL-shapes van DCAT-AP met aanvullende Nederlandse regels. Er zijn meerdere validatieniveaus: alleen verplichte eigenschappen, aanbevolen eigenschappen, of inclusief HVD-eisen (High-Value Datasets).
+
+**Online validator (Europa):**
+De [DCAT-AP online validator](https://www.itb.ec.europa.eu/shacl/semic-shacl/upload) ondersteunt verschillende versies en niveaus van DCAT-AP.
+
+**Python (pyshacl):**
+```python
+# Voorbeeld: DCAT-AP-NL metadata valideren met pyshacl
+# Gebaseerd op: https://github.com/Geonovum/ISO-2-DCAT/blob/main/dcat-ap-nl-3/dcat-ap-nl-shacl-validatie/test.ipynb
+from pyshacl import validate
+from rdflib import Graph
+
+data_graph = Graph().parse("metadata.ttl")
+shacl_graph = Graph().parse("dcat-ap-nl-shapes.ttl")
+
+conforms, results_graph, results_text = validate(
+    data_graph,
+    shacl_graph=shacl_graph,
+    inference="rdfs",
+    abort_on_first=False
+)
+print(results_text)
+```
+
+Let op: DCAT metadata maakt vaak gebruik van URI's naar externe registraties (zoals TOOI URI's voor overheidsorganisaties). Bij validatie is het niet altijd mogelijk om te controleren of externe URI-verwijzingen correct zijn zonder deze daadwerkelijk te volgen.
 
 ## NGR Publicatieworkflow
 
