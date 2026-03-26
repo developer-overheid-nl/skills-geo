@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.3.0](https://github.com/developer-overheid-nl/skills-geo/compare/v0.2.7...v0.3.0) (2026-03-26)
+
+
+### Toegevoegd
+
+* **geo-meta:** voeg MDTO-samenhang en SHACL-validatie toe ([#121](https://github.com/developer-overheid-nl/skills-geo/issues/121)) ([2e23994](https://github.com/developer-overheid-nl/skills-geo/commit/2e239948ccd8c52edbc228c00f75b7a359b8d5c0))
+
+
+### Opgelost
+
+* update gebroken URLs voor NL-SBB en Raamwerk ([#120](https://github.com/developer-overheid-nl/skills-geo/issues/120)) ([60fb497](https://github.com/developer-overheid-nl/skills-geo/commit/60fb4977f8e40913e7653cdfc68f8c9d8317a230))
+
 ## [0.2.7](https://github.com/developer-overheid-nl/skills-geo/compare/v0.2.6...v0.2.7) (2026-03-22)
 
 
