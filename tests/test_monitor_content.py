@@ -111,19 +111,13 @@ class TestNormalizeHtml:
         assert "?t=TIMESTAMP" in result
 
     def test_drupal_uploads_css_aggregatie(self):
-        html = (
-            '<link rel="stylesheet" href='
-            '"/uploads/css/css_tdaRtp2ERM1wvn46RsbyI.css">'
-        )
+        html = '<link rel="stylesheet" href="/uploads/css/css_tdaRtp2ERM1wvn46RsbyI.css">'
         result = normalize_html(html)
         assert "tdaRtp2ERM1wvn46RsbyI" not in result
         assert "/uploads/css/css_HASH.css" in result
 
     def test_drupal_uploads_js_aggregatie(self):
-        html = (
-            '<script src='
-            '"/uploads/js/js_goMVypAsj6V94Qtj684rL.js"></script>'
-        )
+        html = '<script src="/uploads/js/js_goMVypAsj6V94Qtj684rL.js"></script>'
         result = normalize_html(html)
         assert "goMVypAsj6V94Qtj684rL" not in result
         assert "/uploads/js/js_HASH.js" in result
