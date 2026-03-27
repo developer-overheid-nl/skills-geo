@@ -110,6 +110,43 @@ class TestNormalizeHtml:
         assert "1771832749422" not in result
         assert "?t=TIMESTAMP" in result
 
+    def test_drupal_uploads_css_aggregatie(self):
+        html = '<link rel="stylesheet" href="/uploads/css/css_tdaRtp2ERM1wvn46RsbyIXZXrwALXxfgKiY-JY5LPek.css">'
+        result = normalize_html(html)
+        assert "tdaRtp2ERM1wvn46RsbyIXZXrwALXxfgKiY" not in result
+        assert "/uploads/css/css_HASH.css" in result
+
+    def test_drupal_uploads_js_aggregatie(self):
+        html = '<script src="/uploads/js/js_goMVypAsj6V94Qtj684rLYyryJTedXNBugW86M3hp5A.js"></script>'
+        result = normalize_html(html)
+        assert "goMVypAsj6V94Qtj684rLYyryJTedXNBugW86M3hp5A" not in result
+        assert "/uploads/js/js_HASH.js" in result
+
+    def test_drupal_ajax_page_state_libraries(self):
+        html = '"libraries":"eJxdzUEOAiEMheELEXokU6TTY"'
+        result = normalize_html(html)
+        assert "eJxdzUEOAiEMheELEXokU6TTY" not in result
+        assert '"libraries":"HASH"' in result
+
+    def test_drupal_form_action_csrf(self):
+        html = "form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM"
+        result = normalize_html(html)
+        assert "pvdeGsVG5zNF" not in result
+        assert "form_action_HASH" in result
+
+    def test_liferay_remote_addr_in_theme_display(self):
+        html = (
+            "getRemoteAddr: function () {\n"
+            "\t\t\t\treturn '195.240.107.218';\n"
+            "\t\t\t},\n"
+            "\t\t\tgetRemoteHost: function () {\n"
+            "\t\t\t\treturn '195.240.107.218';\n"
+            "\t\t\t},"
+        )
+        result = normalize_html(html)
+        assert "195.240.107.218" not in result
+        assert "REMOTE_ADDR" in result
+
     def test_gewone_content_behouden(self):
         html = "<h1>Digikoppeling Architectuur</h1><p>Standaard tekst.</p>"
         assert normalize_html(html) == html
