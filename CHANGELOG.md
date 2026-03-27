@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1](https://github.com/developer-overheid-nl/skills-geo/compare/v0.3.0...v0.3.1) (2026-03-27)
+
+
+### Opgelost
+
+* strip Drupal/Liferay dynamische elementen in normalize_html ([#126](https://github.com/developer-overheid-nl/skills-geo/issues/126)) ([755608c](https://github.com/developer-overheid-nl/skills-geo/commit/755608c3bf9e1be851e826be889c8f5b18a17758))
+
 ## [0.3.0](https://github.com/developer-overheid-nl/skills-geo/compare/v0.2.7...v0.3.0) (2026-03-26)
 
 
