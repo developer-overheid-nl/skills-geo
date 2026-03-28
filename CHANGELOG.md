@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.2](https://github.com/developer-overheid-nl/skills-geo/compare/v0.3.1...v0.3.2) (2026-03-28)
+
+
+### Opgelost
+
+* update ogc-checker versie en normalize_html Apache timestamps ([#134](https://github.com/developer-overheid-nl/skills-geo/issues/134)) ([7e66aec](https://github.com/developer-overheid-nl/skills-geo/commit/7e66aec240be465cc8569ea6fb38e19b550174d2))
+
 ## [0.3.1](https://github.com/developer-overheid-nl/skills-geo/compare/v0.3.0...v0.3.1) (2026-03-27)
 
 
