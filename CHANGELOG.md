@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.3](https://github.com/developer-overheid-nl/skills-geo/compare/v0.3.2...v0.3.3) (2026-03-31)
+
+
+### Opgelost
+
+* strip Liferay importmap script blokken in normalize_html() ([#141](https://github.com/developer-overheid-nl/skills-geo/issues/141)) ([6ccc60e](https://github.com/developer-overheid-nl/skills-geo/commit/6ccc60e17f2dcb42eab5b65c1e8eb8d840b73cfd))
+
 ## [0.3.2](https://github.com/developer-overheid-nl/skills-geo/compare/v0.3.1...v0.3.2) (2026-03-28)
 
 
