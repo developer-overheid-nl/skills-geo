@@ -1,5 +1,38 @@
 # Changelog
 
+## [0.3.3](https://github.com/developer-overheid-nl/skills-geo/compare/v0.3.2...v0.3.3) (2026-03-31)
+
+
+### Opgelost
+
+* strip Liferay importmap script blokken in normalize_html() ([#141](https://github.com/developer-overheid-nl/skills-geo/issues/141)) ([6ccc60e](https://github.com/developer-overheid-nl/skills-geo/commit/6ccc60e17f2dcb42eab5b65c1e8eb8d840b73cfd))
+
+## [0.3.2](https://github.com/developer-overheid-nl/skills-geo/compare/v0.3.1...v0.3.2) (2026-03-28)
+
+
+### Opgelost
+
+* update ogc-checker versie en normalize_html Apache timestamps ([#134](https://github.com/developer-overheid-nl/skills-geo/issues/134)) ([7e66aec](https://github.com/developer-overheid-nl/skills-geo/commit/7e66aec240be465cc8569ea6fb38e19b550174d2))
+
+## [0.3.1](https://github.com/developer-overheid-nl/skills-geo/compare/v0.3.0...v0.3.1) (2026-03-27)
+
+
+### Opgelost
+
+* strip Drupal/Liferay dynamische elementen in normalize_html ([#126](https://github.com/developer-overheid-nl/skills-geo/issues/126)) ([755608c](https://github.com/developer-overheid-nl/skills-geo/commit/755608c3bf9e1be851e826be889c8f5b18a17758))
+
+## [0.3.0](https://github.com/developer-overheid-nl/skills-geo/compare/v0.2.7...v0.3.0) (2026-03-26)
+
+
+### Toegevoegd
+
+* **geo-meta:** voeg MDTO-samenhang en SHACL-validatie toe ([#121](https://github.com/developer-overheid-nl/skills-geo/issues/121)) ([2e23994](https://github.com/developer-overheid-nl/skills-geo/commit/2e239948ccd8c52edbc228c00f75b7a359b8d5c0))
+
+
+### Opgelost
+
+* update gebroken URLs voor NL-SBB en Raamwerk ([#120](https://github.com/developer-overheid-nl/skills-geo/issues/120)) ([60fb497](https://github.com/developer-overheid-nl/skills-geo/commit/60fb4977f8e40913e7653cdfc68f8c9d8317a230))
+
 ## [0.2.7](https://github.com/developer-overheid-nl/skills-geo/compare/v0.2.6...v0.2.7) (2026-03-22)
 
 
