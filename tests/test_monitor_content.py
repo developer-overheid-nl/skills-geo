@@ -71,12 +71,7 @@ class TestExtractVisibleText:
 
     def test_liferay_framework_ruis_genegeerd(self):
         """Liferay tokens en config verdwijnen omdat ze in script-tags zitten."""
-        html = (
-            "<body>"
-            "<script>Liferay.authToken = '9zmfQSYt';</script>"
-            "<p>PDOK content</p>"
-            "</body>"
-        )
+        html = "<body><script>Liferay.authToken = '9zmfQSYt';</script><p>PDOK content</p></body>"
         result = extract_visible_text(html)
         assert "PDOK content" in result
         assert "authToken" not in result
