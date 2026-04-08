@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.4](https://github.com/developer-overheid-nl/skills-geo/compare/v0.3.3...v0.3.4) (2026-04-07)
+
+
+### Opgelost
+
+* vervang normalize_html() door extract_visible_text() ([#156](https://github.com/developer-overheid-nl/skills-geo/issues/156)) ([e1c6c6f](https://github.com/developer-overheid-nl/skills-geo/commit/e1c6c6f21bdf692e7de2c85468277e7f59de0b0a))
+
 ## [0.3.3](https://github.com/developer-overheid-nl/skills-geo/compare/v0.3.2...v0.3.3) (2026-03-31)
 
 
