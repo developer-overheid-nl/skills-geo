@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.5](https://github.com/developer-overheid-nl/skills-geo/compare/v0.3.4...v0.3.5) (2026-04-20)
+
+
+### Opgelost
+
+* bump pygments 2.19.2 -&gt; 2.20.0 (GHSA-5239-wwwm-4pmq) ([#187](https://github.com/developer-overheid-nl/skills-geo/issues/187)) ([da6df1c](https://github.com/developer-overheid-nl/skills-geo/commit/da6df1c719fc25b83ea45da015562e9d09ed39dc))
+
 ## [0.3.4](https://github.com/developer-overheid-nl/skills-geo/compare/v0.3.3...v0.3.4) (2026-04-07)
 
 
