@@ -1,11 +1,6 @@
 ---
 name: geo-model
-description: >-
-  Informatiemodellen voor geodata. Gebruik deze skill wanneer de gebruiker
-  vraagt over 'NEN 3610', 'MIM', 'IMGeo', 'IMBAG', 'IMRO', 'IMKL',
-  'informatiemodel', 'BGT', 'basismodel geo-informatie',
-  'linked data geo', 'sectormodel', 'metamodel informatie modellering',
-  'geo-informatiemodel', 'UML geo'.
+description: "Informatiemodellen voor geodata: NEN 3610, MIM, IMGeo, IMBAG, IMRO, IMKL, BGT. Linked data geo, UML, metamodel informatiemodellering."
 model: sonnet
 allowed-tools:
   - Bash(gh api *)

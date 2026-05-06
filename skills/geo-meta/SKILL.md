@@ -1,13 +1,6 @@
 ---
 name: geo-meta
-description: >-
-  Metadata standaarden voor geodata. Gebruik deze skill wanneer de gebruiker
-  vraagt over 'metadata', 'ISO 19115', 'ISO 19119', 'CSW',
-  'NGR', 'nationaal georegister', 'Nationaal Georegister',
-  'DCAT geo', 'metadata profiel', 'metadata publiceren',
-  'metadata validatie', 'geodata catalogus', 'discovery service',
-  'MDTO', 'metagegevens duurzaam toegankelijke overheidsinformatie',
-  'SHACL', 'DCAT validatie', 'DCAT-AP-NL'.
+description: "Metadata voor geodata: ISO 19115/19119, CSW, NGR (Nationaal Georegister), DCAT-AP-NL, MDTO, SHACL-validatie. Metadata publiceren en geodata-catalogi."
 model: sonnet
 allowed-tools:
   - Bash(gh api *)
