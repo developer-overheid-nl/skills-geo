@@ -1,11 +1,6 @@
 ---
 name: geo-api
-description: >-
-  OGC API services en kaartdiensten. Gebruik deze skill wanneer de gebruiker
-  vraagt over 'OGC API', 'WMS', 'WFS', 'WCS', 'WMTS',
-  'OGC API Features', 'kaartdienst', 'map service', 'ogc-checker',
-  'geo API', 'GetCapabilities', 'GetMap', 'GetFeature',
-  'PDOK service', 'geo webservice', 'spatial web service'.
+description: "OGC API services en kaartdiensten: WMS, WFS, WCS, WMTS, OGC API Features. PDOK-services, GetCapabilities/GetMap/GetFeature, ogc-checker validatie."
 model: sonnet
 allowed-tools:
   - Bash(gh api *)

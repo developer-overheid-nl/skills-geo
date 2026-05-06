@@ -1,11 +1,6 @@
 ---
 name: geo
-description: >-
-  Overzicht van alle Geonovum geo-standaarden. Gebruik deze skill wanneer de
-  gebruiker vraagt over 'geonovum', 'geo standaarden', 'geostandaarden',
-  'PDOK', 'ruimtelijke data', 'spatial data', 'GIS overheid',
-  'welke geo-standaarden zijn er', 'geo-informatie Nederland',
-  'geodata overheid'.
+description: "Overzicht Geonovum geo-standaarden voor de Nederlandse overheid. Routeert naar geo-api, geo-meta, geo-model, geo-3d, geo-inspire. Ook PDOK en GIS-vragen."
 model: sonnet
 allowed-tools:
   - Bash(gh api *)

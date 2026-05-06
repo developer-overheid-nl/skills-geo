@@ -50,7 +50,7 @@ Achtergrondkennis die niet direct nodig is voor code-generatie wordt verplaatst 
 - Exploratie commando's (`gh api`, `curl`, `ogr2ogr`)
 
 ### Description triggers
-Descriptions bevatten zowel Nederlandse als technische Engelse triggerwoorden zodat de skill bij relevante vragen wordt geactiveerd.
+Descriptions bevatten zowel Nederlandse als technische Engelse triggerwoorden zodat de skill bij relevante vragen wordt geactiveerd. Houd descriptions kort: doel **~150 chars, max 200**. Eén functionele zin met de eigennamen die mensen daadwerkelijk gebruiken (NEN 3610, OGC API, INSPIRE, MDTO) is genoeg; voeg alleen een korte triggerstaart toe voor termen die niet uit de hoofdzin volgen. Geen "Gebruik deze skill wanneer..."-aanhef en geen quoted keyword-lijsten — die vreten skill listing budget op zonder triggerwaarde toe te voegen.
 
 ### Allowed tools
 Standaard set:

@@ -1,12 +1,6 @@
 ---
 name: geo-inspire
-description: >-
-  INSPIRE Europese richtlijn voor geodata. Gebruik deze skill wanneer de
-  gebruiker vraagt over 'INSPIRE', 'INSPIRE validator', 'ETF',
-  'Europese richtlijn geo', 'INSPIRE implementatie',
-  'INSPIRE datathema', 'INSPIRE download service',
-  'INSPIRE view service', 'INSPIRE discovery', 'INSPIRE handreiking',
-  'Annex I', 'Annex II', 'Annex III'.
+description: "INSPIRE Europese richtlijn voor geodata: download/view/discovery services, ETF-validator, Annex I/II/III datathema's, implementatie-handreikingen."
 model: sonnet
 allowed-tools:
   - Bash(gh api *)

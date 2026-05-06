@@ -1,11 +1,6 @@
 ---
 name: geo-3d
-description: >-
-  3D standaarden voor ruimtelijke data. Gebruik deze skill wanneer de
-  gebruiker vraagt over '3D', 'CityGML', '3D tiling', '3D Tiles',
-  'GeoBIM', 'digital twin', '3D geo', '3D standaarden',
-  '3D basisvoorziening', 'BIM GIS', 'IFC', 'LOD', 'level of detail',
-  '3D stadsmodel', 'Cesium', '3D visualisatie geo'.
+description: "3D-standaarden voor ruimtelijke data: CityGML, 3D Tiles, GeoBIM, IFC, LOD (level of detail), Cesium. Ook 3D basisvoorziening en digital twin."
 model: sonnet
 allowed-tools:
   - Bash(gh api *)
