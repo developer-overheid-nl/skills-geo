@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.7](https://github.com/developer-overheid-nl/skills-geo/compare/v0.3.6...v0.3.7) (2026-05-06)
+
+
+### Opgelost
+
+* kort skill descriptions in om listing budget te ontlasten ([#216](https://github.com/developer-overheid-nl/skills-geo/issues/216)) ([5b48991](https://github.com/developer-overheid-nl/skills-geo/commit/5b48991c292099517d155b7d18d4fec2ca28ecc5))
+
 ## [0.3.6](https://github.com/developer-overheid-nl/skills-geo/compare/v0.3.5...v0.3.6) (2026-04-25)
 
 
