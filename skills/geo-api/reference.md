@@ -116,15 +116,6 @@ Query parameters voor `/items`:
 | AHN (hoogtedata) | WCS | `https://service.pdok.nl/rws/ahn/wcs/v1_0` |
 | Bestuurlijke grenzen | WFS | `https://service.pdok.nl/kadaster/bestuurlijkegebieden/wfs/v1_0` |
 
-### PDOK API-key
-
-Voor intensief gebruik van PDOK-services is een API-key beschikbaar. Aanvragen via [pdok.nl](https://www.pdok.nl/). De key wordt meegegeven als HTTP-header:
-
-```bash
-curl -s -H "X-Api-Key: <jouw-key>" \
-  "https://api.pdok.nl/lv/bag/ogc/v1/collections/pand/items?limit=100"
-```
-
 ## Repository Exploratie
 
 ```bash
