@@ -16,7 +16,12 @@ Deze pagina bevat aanvullende technische details over OGC-protocollen, coördina
 
 ### Coördinaatvolgorde
 
-Let op: de coördinaatvolgorde verschilt per protocol en CRS.
+Let op: de coördinaatvolgorde verschilt per protocol en CRS. `EPSG:4326` en
+`CRS84` verwijzen beide naar WGS 84, maar zijn niet inwisselbaar: `EPSG:4326`
+heeft asvolgorde lat/lon (breedte, lengte) volgens de EPSG-definitie, terwijl
+`CRS84` (`OGC:CRS84`, de standaard-CRS van OGC API Features) lon/lat aanhoudt.
+Een bron die alleen `CRS84` (lon/lat) noemt, spreekt de `EPSG:4326`-asvolgorde
+dus niet tegen — het zijn twee verschillende CRS-identifiers voor hetzelfde datum.
 
 - **WMS 1.3.0**: Volgt de CRS-definitie. Voor EPSG:4326 is dat lat/lon (y,x). Voor EPSG:28992 is dat x,y.
 - **WFS 2.0**: Volgt de CRS-definitie, tenzij anders geconfigureerd.
