@@ -266,7 +266,7 @@ ogr2ogr -f "GeoJSON" /tmp/panden_wgs84.geojson \
 | Lege response bij bbox-filter | Verkeerde coördinaatvolgorde | WMS 1.3.0 respecteert CRS-asvolgorde: voor EPSG:4326 is dat lat/lon; voor EPSG:28992 is het x/y |
 | Timeout bij grote WFS-requests | Te veel features opgevraagd | Gebruik `count`/`maxFeatures` parameter of bbox-filter |
 | `text/xml` in plaats van GeoJSON | outputFormat niet ondersteund | Controleer GetCapabilities voor beschikbare formaten |
-| 403 bij PDOK-service | Rate limiting of IP-blokkade | Gebruik API-key voor intensief gebruik (via PDOK) |
+| 403 bij PDOK-service | Te zware of geblokkeerde request | PDOK-services zijn open zonder API-key; beperk de request (bbox, lagere frequentie) of neem contact op met PDOK bij structurele blokkade |
 | OGC API Features geeft HTML | Geen Accept-header meegegeven | Voeg `Accept: application/geo+json` header toe |
 
 ## Cross-referenties
