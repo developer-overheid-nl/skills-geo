@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.3.8](https://github.com/developer-overheid-nl/skills-geo/compare/v0.3.7...v0.3.8) (2026-05-17)
+
+
+### Opgelost
+
+* **geo-api:** Delete PDOK API-key section ([#232](https://github.com/developer-overheid-nl/skills-geo/issues/232)) ([4f30efe](https://github.com/developer-overheid-nl/skills-geo/commit/4f30efef678efaa44106a2da1eed7b658e073732))
+* **geo-api:** expliciet onderscheid EPSG:4326 vs CRS84 asvolgorde ([#236](https://github.com/developer-overheid-nl/skills-geo/issues/236)) ([245804d](https://github.com/developer-overheid-nl/skills-geo/commit/245804d732d6f6c83d3a2499b673fdddcfc1c300))
+* **geo-api:** verwijder resterende PDOK API-key claim uit troubleshooting ([#234](https://github.com/developer-overheid-nl/skills-geo/issues/234)) ([0e544ae](https://github.com/developer-overheid-nl/skills-geo/commit/0e544ae0f0c269c3f6454254e39afa74c7c4126f))
+
 ## [0.3.7](https://github.com/developer-overheid-nl/skills-geo/compare/v0.3.6...v0.3.7) (2026-05-06)
 
 
