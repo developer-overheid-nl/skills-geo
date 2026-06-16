@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.9](https://github.com/developer-overheid-nl/skills-geo/compare/v0.3.8...v0.3.9) (2026-06-16)
+
+
+### Opgelost
+
+* actualiseer ogc-checker versie naar v1.0.5 ([#256](https://github.com/developer-overheid-nl/skills-geo/issues/256)) ([ccdc869](https://github.com/developer-overheid-nl/skills-geo/commit/ccdc869840a5e09ab7b7e45358519883f4836cb0))
+
 ## [0.3.8](https://github.com/developer-overheid-nl/skills-geo/compare/v0.3.7...v0.3.8) (2026-05-17)
 
 
