@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.14](https://github.com/developer-overheid-nl/skills-geo/compare/v0.3.13...v0.3.14) (2026-09-19)
+
+
+### Opgelost
+
+* verwijs NEN 3610 naar het document in plaats van de directory-index ([#334](https://github.com/developer-overheid-nl/skills-geo/issues/334)) ([4020fc5](https://github.com/developer-overheid-nl/skills-geo/commit/4020fc55fd26a9cbff5eef9b0b2205de2e3dd717))
+
 ## [0.3.13](https://github.com/developer-overheid-nl/skills-geo/compare/v0.3.12...v0.3.13) (2026-09-09)
 
 
