@@ -19,7 +19,7 @@ metadata:
 
 **Agent-instructie:** Deze skill helpt bij het werken met Nederlandse geo-informatiemodellen, van het basismodel NEN 3610 tot sectormodellen. Gebruik de modelstructuur en voorbeelden om conforme data-uitwisseling te genereren. NEN 3610 is verplicht onder ['pas-toe-of-leg-uit'](https://www.forumstandaardisatie.nl/open-standaarden/geo-standaarden) van het Forum Standaardisatie.
 
-[NEN 3610](https://docs.geostandaarden.nl/nen3610/) is het basismodel voor geo-informatie in Nederland. Alle sectorale informatiemodellen (IMGeo, IMBAG, IMRO, etc.) zijn hiervan afgeleid. Het [Metamodel Informatie Modellering (MIM)](https://docs.geostandaarden.nl/mim/def-st-mim-20220217/) beschrijft hoe informatiemodellen opgesteld moeten worden. Geonovum beheert beide standaarden.
+[NEN 3610](https://docs.geostandaarden.nl/nen3610/nldp/) is het basismodel voor geo-informatie in Nederland. Alle sectorale informatiemodellen (IMGeo, IMBAG, IMRO, etc.) zijn hiervan afgeleid. Het [Metamodel Informatie Modellering (MIM)](https://docs.geostandaarden.nl/mim/def-st-mim-20220217/) beschrijft hoe informatiemodellen opgesteld moeten worden. Geonovum beheert beide standaarden.
 
 ## Standaarden Overzicht
 
