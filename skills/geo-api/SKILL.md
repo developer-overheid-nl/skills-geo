@@ -246,6 +246,27 @@ npx @geonovum/ogc-checker --standard ogc-api-processes --version 2.0.0 ./openapi
 
 > **Let op:** sinds v1.2.0 selecteert `--standard ogc-api-processes` de goedgekeurde 1.0-versie in plaats van de 2.0-draft. Vanaf v1.3.0 vereist de CLI Node 22 of hoger (Node 20 is end-of-life).
 
+### Via Docker
+
+Sinds september 2026 bevat de repo een `Dockerfile` die één image bouwt voor zowel de CLI als de web-UI. Het entrypoint kijkt naar het eerste argument: `serve` (of `web`) start de webserver, al het andere gaat door naar de CLI. Handig als Node 22+ lokaal niet beschikbaar is.
+
+```bash
+docker build -t ogc-checker:local .
+
+# CLI: lokaal bestand valideren (mount het in de container)
+docker run --rm -v "$PWD/openapi.json:/data/openapi.json:ro" \
+  ogc-checker:local validate --standard ogc-api-processes --input /data/openapi.json
+
+# CLI: vanaf een URL
+docker run --rm ogc-checker:local \
+  validate --standard json-fg --input https://service.example.nl/spec.json
+
+# Web-UI op http://localhost:8080/
+docker run --rm -p 8080:8080 ogc-checker:local serve
+```
+
+De poort in de container is `8080`; met `-e PORT=<poort>` is die aanpasbaar (pas dan ook de `-p` mapping aan). Exit codes van de CLI: `0` = geslaagd, `1` = gefaald volgens het `--fail-on` beleid, `>1` = onverwachte fout.
+
 ```bash
 # Repo-informatie ophalen
 gh api repos/Geonovum/ogc-checker --jq '{name, description, language, updated_at}'
