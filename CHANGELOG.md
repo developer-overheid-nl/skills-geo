@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/developer-overheid-nl/skills-geo/compare/v0.3.14...v0.4.0) (2026-09-25)
+
+
+### Toegevoegd
+
+* documenteer Docker-gebruik van ogc-checker in geo-api ([#338](https://github.com/developer-overheid-nl/skills-geo/issues/338)) ([09f59f8](https://github.com/developer-overheid-nl/skills-geo/commit/09f59f896e86b60212364fca52195b985b7ee621))
+
 ## [0.3.14](https://github.com/developer-overheid-nl/skills-geo/compare/v0.3.13...v0.3.14) (2026-09-19)
 
 
