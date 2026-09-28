@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/developer-overheid-nl/skills-geo/compare/v0.4.0...v0.4.1) (2026-09-28)
+
+
+### Opgelost
+
+* haal de drie geonovum.nl-pagina's uit de content-monitoring ([#345](https://github.com/developer-overheid-nl/skills-geo/issues/345)) ([f11be8b](https://github.com/developer-overheid-nl/skills-geo/commit/f11be8b932a45cb8a577708e4d292a0af247a358))
+
 ## [0.4.0](https://github.com/developer-overheid-nl/skills-geo/compare/v0.3.14...v0.4.0) (2026-09-25)
 
 
