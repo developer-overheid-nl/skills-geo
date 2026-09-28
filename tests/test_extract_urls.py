@@ -7,6 +7,7 @@ from extract_urls import (
     clean_url,
     extract_all,
     extract_urls_from_file,
+    is_content_monitoring_excluded,
     is_excluded,
     normalize_github_url,
 )
@@ -163,3 +164,36 @@ class TestExtractAll:
         skill_dir = tmp_path / "skills"
         skill_dir.mkdir()
         assert extract_all(skill_dir) == []
+
+
+# --- is_content_monitoring_excluded() ---
+
+
+class TestContentMonitoringExclude:
+    """De drie geonovum.nl-pagina's blijven in de link-check, maar niet in de
+    content-monitoring: ze vuren structureel samen terwijl de hash gelijk blijft."""
+
+    def test_geo_standaarden_hoofdpagina(self):
+        assert is_content_monitoring_excluded("https://www.geonovum.nl/geo-standaarden")
+        assert is_content_monitoring_excluded("https://www.geonovum.nl/geo-standaarden/")
+        assert is_content_monitoring_excluded("https://geonovum.nl/geo-standaarden")
+
+    def test_geopackage(self):
+        assert is_content_monitoring_excluded("https://www.geonovum.nl/geo-standaarden/geopackage")
+
+    def test_relaties_metadata(self):
+        assert is_content_monitoring_excluded(
+            "https://www.geonovum.nl/geo-standaarden/metadataprofiel-dcat-ap-nl/"
+            "relaties-verschillende-metadata-standaarden"
+        )
+
+    def test_andere_geonovum_subpagina_blijft_gemonitord(self):
+        # Alleen deze drie zijn uitgesloten, niet geonovum.nl als geheel.
+        assert not is_content_monitoring_excluded(
+            "https://www.geonovum.nl/geo-standaarden/metadataprofiel-dcat-ap-nl"
+        )
+        assert not is_content_monitoring_excluded("https://www.geonovum.nl/over-geonovum")
+
+    def test_losstaand_van_is_excluded(self):
+        # Deze URLs zijn echte bronnen, dus niet uitgesloten voor de link-check.
+        assert not is_excluded("https://www.geonovum.nl/geo-standaarden")

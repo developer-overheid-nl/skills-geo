@@ -34,6 +34,27 @@ EXCLUDE_PATTERNS = [
     re.compile(r"https?://your-domain\.nl"),
 ]
 
+# URLs die wél bestaan en wél op dode links gecontroleerd moeten worden, maar
+# ongeschikt zijn voor content-monitoring op body-hash.
+#
+# De drie geonovum.nl-pagina's vuren structureel samen, elke paar dagen, al
+# maanden: 30 van de laatste 60 monitoring-issues in deze repo kwamen hiervandaan.
+# Gemeten op 2026-09-01 en opnieuw op 2026-09-28: de genormaliseerde tekst is
+# byte-identiek (hashes 1306522e57b9323c, efb9e7d9c94060b4, 4101deb5bb3953fe),
+# dus de pagina's veranderen niet. De GitHub-runner krijgt een andere
+# regio-/CDN-variant van de Geonovum-CMS dan een fetch uit NL, wat niet lokaal
+# reproduceerbaar is en dus niet met normalisatie te verhelpen.
+#
+# Ze blijven in de lychee-lijst staan, zodat een dode link nog steeds opvalt.
+CONTENT_MONITORING_EXCLUDE_PATTERNS = [
+    re.compile(r"https://(?:www\.)?geonovum\.nl/geo-standaarden/?$"),
+    re.compile(r"https://(?:www\.)?geonovum\.nl/geo-standaarden/geopackage"),
+    re.compile(
+        r"https://(?:www\.)?geonovum\.nl/geo-standaarden/metadataprofiel-dcat-ap-nl/"
+        r"relaties-verschillende-metadata-standaarden"
+    ),
+]
+
 # Markdown-extractie regex: vindt alle URLs in tekst
 URL_RE = re.compile(r"https?://[^\s\)\]\"'>]+")
 
@@ -41,6 +62,15 @@ URL_RE = re.compile(r"https?://[^\s\)\]\"'>]+")
 def is_excluded(url: str) -> bool:
     """Controleer of een URL uitgesloten moet worden."""
     return any(pattern.search(url) for pattern in EXCLUDE_PATTERNS)
+
+
+def is_content_monitoring_excluded(url: str) -> bool:
+    """Controleer of een URL buiten de content-monitoring valt.
+
+    Deze URLs blijven in de lychee-lijst (link-check), maar komen niet in het
+    JSON-manifest dat monitor_content.py op body-hash vergelijkt.
+    """
+    return any(pattern.search(url) for pattern in CONTENT_MONITORING_EXCLUDE_PATTERNS)
 
 
 def classify_url(url: str) -> str | None:
@@ -148,6 +178,8 @@ def output_json(urls: list[dict], output: Path | None) -> None:
     manifest: dict = {}
     for entry in urls:
         url = entry["url"]
+        if is_content_monitoring_excluded(url):
+            continue
         if url not in manifest:
             manifest[url] = {
                 "url": url,
