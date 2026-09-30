@@ -38,7 +38,7 @@ OGC-services zijn de standaard manier om geodata beschikbaar te stellen via het 
 
 | Repository | Beschrijving | Licentie |
 |-----------|-------------|--------|
-| [Geonovum/ogc-checker](https://github.com/Geonovum/ogc-checker) | Validatietool voor OGC services (v1.3.1) | [EUPL-1.2](https://eupl.eu/1.2/en) |
+| [Geonovum/ogc-checker](https://github.com/Geonovum/ogc-checker) | Validatietool voor OGC services (v1.3.2) | [EUPL-1.2](https://eupl.eu/1.2/en) |
 | [Geonovum/ogc-checker Tags](https://github.com/Geonovum/ogc-checker/tags) | Versies van ogc-checker | [EUPL-1.2](https://eupl.eu/1.2/en) |
 
 ## WMS (Web Map Service)
@@ -225,7 +225,7 @@ print(f"Gevonden: {len(data['features'])} panden")
 
 ## ogc-checker Validatie
 
-De [ogc-checker](https://github.com/Geonovum/ogc-checker) (v1.3.1) is een validatietool van Geonovum om OGC-services te controleren op conformiteit.
+De [ogc-checker](https://github.com/Geonovum/ogc-checker) (v1.3.2) is een validatietool van Geonovum om OGC-services te controleren op conformiteit.
 
 De CLI kiest een standaard met `--standard <slug>` en optioneel `--version <id>`; zonder `--version` wordt de laatste **final** versie gebruikt. De oude vlag `--ruleset` werkt nog als deprecated alias en waarschuwt op stderr.
 
@@ -248,24 +248,34 @@ npx @geonovum/ogc-checker --standard ogc-api-processes --version 2.0.0 ./openapi
 
 ### Via Docker
 
-Sinds september 2026 bevat de repo een `Dockerfile` die één image bouwt voor zowel de CLI als de web-UI. Het entrypoint kijkt naar het eerste argument: `serve` (of `web`) start de webserver, al het andere gaat door naar de CLI. Handig als Node 22+ lokaal niet beschikbaar is.
+De repo bevat een `Dockerfile` met **twee build targets** uit dezelfde bron. Handig als Node 22+ lokaal niet beschikbaar is.
+
+- `cli` (default): de CLI op een distroless, non-root Node-image
+- `web`: de web-UI als statische bestanden, geserveerd door Caddy als non-root gebruiker
 
 ```bash
-docker build -t ogc-checker:local .
+# CLI
+docker build --target cli -t ogc-checker .
 
-# CLI: lokaal bestand valideren (mount het in de container)
+# lokaal bestand valideren (mount het in de container)
 docker run --rm -v "$PWD/openapi.json:/data/openapi.json:ro" \
-  ogc-checker:local validate --standard ogc-api-processes --input /data/openapi.json
+  ogc-checker validate --standard ogc-api-processes --input /data/openapi.json
 
-# CLI: vanaf een URL
-docker run --rm ogc-checker:local \
+# vanaf een URL
+docker run --rm ogc-checker \
   validate --standard json-fg --input https://service.example.nl/spec.json
 
+# vanaf stdin
+cat spec.json | docker run --rm -i ogc-checker validate --standard json-fg
+
 # Web-UI op http://localhost:8080/
-docker run --rm -p 8080:8080 ogc-checker:local serve
+docker build --target web -t ogc-checker-web .
+docker run --rm -p 8080:8080 ogc-checker-web
 ```
 
-De poort in de container is `8080`; met `-e PORT=<poort>` is die aanpasbaar (pas dan ook de `-p` mapping aan). Exit codes van de CLI: `0` = geslaagd, `1` = gefaald volgens het `--fail-on` beleid, `>1` = onverwachte fout.
+De poort in de container is `8080`; aanpasbaar met `-e PORT=<poort>` plus een bijpassende `-p` mapping (bijv. `-e PORT=9090 -p 9090:9090`). Exit codes van de CLI: `0` = geslaagd, `1` = gefaald volgens het `--fail-on` beleid, `>1` = onverwachte fout.
+
+> **Let op:** tot v1.3.1 was er één image met een entrypoint dat op het eerste argument dispatchte (`serve` startte de webserver). Dat entrypoint is in v1.3.2 vervangen door de twee targets hierboven; `docker run ... serve` werkt dus niet meer.
 
 ```bash
 # Repo-informatie ophalen
