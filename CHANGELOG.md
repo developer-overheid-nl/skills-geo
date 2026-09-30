@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.2](https://github.com/developer-overheid-nl/skills-geo/compare/v0.4.1...v0.4.2) (2026-09-30)
+
+
+### Opgelost
+
+* ogc-checker v1.3.2, Docker draait nu op twee build targets ([#349](https://github.com/developer-overheid-nl/skills-geo/issues/349)) ([4685d98](https://github.com/developer-overheid-nl/skills-geo/commit/4685d980b760fe7df1f9cbb14b0f66f5d53ece06))
+
 ## [0.4.1](https://github.com/developer-overheid-nl/skills-geo/compare/v0.4.0...v0.4.1) (2026-09-28)
 
 
