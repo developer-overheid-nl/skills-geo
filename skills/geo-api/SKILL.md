@@ -1,7 +1,6 @@
 ---
 name: geo-api
 description: "OGC API services en kaartdiensten: WMS, WFS, WCS, WMTS, OGC API Features. PDOK-services, GetCapabilities/GetMap/GetFeature, ogc-checker validatie."
-model: sonnet
 allowed-tools:
   - Bash(gh api *)
   - Bash(curl -s *)

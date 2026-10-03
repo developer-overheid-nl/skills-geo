@@ -1,7 +1,6 @@
 ---
 name: geo-meta
 description: "Metadata voor geodata: ISO 19115/19119, CSW, NGR (Nationaal Georegister), DCAT-AP-NL, MDTO, SHACL-validatie. Metadata publiceren en geodata-catalogi."
-model: sonnet
 allowed-tools:
   - Bash(gh api *)
   - Bash(curl -s *)

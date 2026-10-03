@@ -1,7 +1,6 @@
 ---
 name: geo-model
 description: "Informatiemodellen voor geodata: NEN 3610, MIM, IMGeo, IMBAG, IMRO, IMKL, BGT. Linked data geo, UML, metamodel informatiemodellering."
-model: sonnet
 allowed-tools:
   - Bash(gh api *)
   - Bash(curl -s *)

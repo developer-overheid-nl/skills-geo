@@ -1,7 +1,6 @@
 ---
 name: geo-3d
 description: "3D-standaarden voor ruimtelijke data: CityGML, 3D Tiles, GeoBIM, IFC, LOD (level of detail), Cesium. Ook 3D basisvoorziening en digital twin."
-model: sonnet
 allowed-tools:
   - Bash(gh api *)
   - Bash(curl -s *)
