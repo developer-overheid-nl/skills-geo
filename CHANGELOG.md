@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.3](https://github.com/developer-overheid-nl/skills-geo/compare/v0.4.2...v0.4.3) (2026-10-03)
+
+
+### Opgelost
+
+* skills respecteren het model van de gebruiker ([#352](https://github.com/developer-overheid-nl/skills-geo/issues/352)) ([5392fc5](https://github.com/developer-overheid-nl/skills-geo/commit/5392fc5c3551ddf0bdffdcde906d1f3a5e214140))
+
 ## [0.4.2](https://github.com/developer-overheid-nl/skills-geo/compare/v0.4.1...v0.4.2) (2026-09-30)
 
 
