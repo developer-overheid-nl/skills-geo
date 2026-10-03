@@ -1,7 +1,6 @@
 ---
 name: geo-inspire
 description: "INSPIRE Europese richtlijn voor geodata: download/view/discovery services, ETF-validator, Annex I/II/III datathema's, implementatie-handreikingen."
-model: sonnet
 allowed-tools:
   - Bash(gh api *)
   - Bash(curl -s *)

@@ -1,7 +1,6 @@
 ---
 name: geo
 description: "Overzicht Geonovum geo-standaarden voor de Nederlandse overheid. Routeert naar geo-api, geo-meta, geo-model, geo-3d, geo-inspire. Ook PDOK en GIS-vragen."
-model: sonnet
 allowed-tools:
   - Bash(gh api *)
   - Bash(curl -s *)
