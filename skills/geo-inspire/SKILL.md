@@ -158,17 +158,21 @@ constraint=keyword=%27INSPIRE%27&constraintLanguage=CQL_TEXT"
 
 ## INSPIRE Validatie
 
-De [INSPIRE Validator](https://inspire.ec.europa.eu/validator/) (ETF-gebaseerd) toetst services en data op conformiteit.
+De INSPIRE Reference Validator (ETF-gebaseerd) toetst services en data op conformiteit.
 
-### Validatie via de API
+> **Let op:** de Europese Commissie biedt sinds **1 april 2026 geen centrale instantie** meer aan ([aankondiging](https://knowledge-base.inspire.ec.europa.eu/news-and-publications/news/discontinuation-inspire-reference-validator-2026-04-01_en)). De oude URL `inspire.ec.europa.eu/validator/` redirect nu naar een algemene hulppagina en de `v2`-endpoints geven een redirect-loop. Valideren gaat via een **lokale instantie**: broncode, testsets en installatie-instructies staan in [INSPIRE-Validator-Container](https://github.com/inspire-eu-validation/INSPIRE-Validator-Container#readme), achtergrond over de API in de [ETF-documentatie](https://github.com/etf-validator/docs).
+
+### Validatie via de API van een lokale instantie
+
+Vervang `localhost:8080` door het adres van je eigen instantie.
 
 ```bash
 # Beschikbare testsuites ophalen
-curl -s "https://inspire.ec.europa.eu/validator/v2/ExecutableTestSuites" \
+curl -s "http://localhost:8080/validator/v2/ExecutableTestSuites" \
   | python3 -m json.tool | head -60
 
 # WMS validatie starten
-curl -s -X POST "https://inspire.ec.europa.eu/validator/v2/TestRuns" \
+curl -s -X POST "http://localhost:8080/validator/v2/TestRuns" \
   -H "Content-Type: application/json" \
   -d '{
     "label": "WMS Validatie",
@@ -187,7 +191,7 @@ curl -s -X POST "https://inspire.ec.europa.eu/validator/v2/TestRuns" \
   }'
 
 # Status van een testrun ophalen
-curl -s "https://inspire.ec.europa.eu/validator/v2/TestRuns/{testRunId}" \
+curl -s "http://localhost:8080/validator/v2/TestRuns/{testRunId}" \
   | python3 -m json.tool
 ```
 
