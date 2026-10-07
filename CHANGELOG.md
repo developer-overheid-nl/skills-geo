@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.4](https://github.com/developer-overheid-nl/skills-geo/compare/v0.4.3...v0.4.4) (2026-10-07)
+
+
+### Opgelost
+
+* INSPIRE-validator is geen centrale dienst meer ([#355](https://github.com/developer-overheid-nl/skills-geo/issues/355)) ([926504f](https://github.com/developer-overheid-nl/skills-geo/commit/926504f41b52eb75fcbcfa5a5139c6ad9a87fa06))
+
 ## [0.4.3](https://github.com/developer-overheid-nl/skills-geo/compare/v0.4.2...v0.4.3) (2026-10-03)
 
 
