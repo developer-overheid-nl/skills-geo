@@ -12,7 +12,7 @@
 ```bash
 # Via de overheid-plugins marketplace (aanbevolen)
 claude plugin marketplace add developer-overheid-nl/skills-marketplace
-claude plugin install geonovum@overheid-plugins
+claude plugin install geo@overheid-plugins
 
 # Per sessie
 git clone https://github.com/developer-overheid-nl/skills-geo.git
