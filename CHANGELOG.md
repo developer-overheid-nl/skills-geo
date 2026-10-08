@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.5](https://github.com/developer-overheid-nl/skills-geo/compare/v0.4.4...v0.4.5) (2026-10-07)
+
+
+### Opgelost
+
+* corrigeer de plugin-naam in het installatiecommando ([#357](https://github.com/developer-overheid-nl/skills-geo/issues/357)) ([7d849d2](https://github.com/developer-overheid-nl/skills-geo/commit/7d849d28687cd11a223481905918137de36f1237))
+
 ## [0.4.4](https://github.com/developer-overheid-nl/skills-geo/compare/v0.4.3...v0.4.4) (2026-10-07)
 
 
