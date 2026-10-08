@@ -19,6 +19,39 @@ git clone https://github.com/developer-overheid-nl/skills-geo.git
 claude --plugin-dir ./skills-geo
 ```
 
+## Bijwerken
+
+**Zet auto-update aan.** Een geïnstalleerde plugin blijft anders staan op de
+versie waarmee je hem installeerde, en niets wijst je erop dat er een nieuwe is.
+Met auto-update ververst Claude Code de marketplace en werkt het de plugins op
+schijf bij:
+
+- **In Claude Code:** `/plugin` → **Marketplaces** → `overheid-plugins` → **Enable auto-update**
+- **Of in `~/.claude/settings.json`:**
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "overheid-plugins": {
+      "source": { "source": "github", "repo": "developer-overheid-nl/skills-marketplace" },
+      "autoUpdate": true
+    }
+  }
+}
+```
+
+De waarde in `settings.json` gaat vóór op de toggle in `/plugin`: staat daar
+`false`, dan doet de toggle niets. De nieuwe versie laadt bij de volgende start,
+of direct met `/reload-plugins`.
+
+Heb je een nieuwe versie meteen nodig, dan werkt dit los van auto-update, dat tot
+tien minuten na je eerste bericht wacht en buiten een interactieve sessie niet
+draait:
+
+```bash
+claude plugin update geo@overheid-plugins
+```
+
 ## Skills
 
 | Skill | Beschrijving |
