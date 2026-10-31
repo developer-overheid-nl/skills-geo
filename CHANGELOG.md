@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.6](https://github.com/developer-overheid-nl/skills-geo/compare/v0.4.5...v0.4.6) (2026-10-31)
+
+
+### Opgelost
+
+* **geo-api:** ogc-checker v1.4.0 (OpenLint, Node 22.18+ of 24+) ([5a15249](https://github.com/developer-overheid-nl/skills-geo/commit/5a1524936a9f60895450c0f5dbbe6ebba1ea2e53))
+
 ## [0.4.5](https://github.com/developer-overheid-nl/skills-geo/compare/v0.4.4...v0.4.5) (2026-10-07)
 
 
