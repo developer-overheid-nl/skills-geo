@@ -37,7 +37,7 @@ OGC-services zijn de standaard manier om geodata beschikbaar te stellen via het 
 
 | Repository | Beschrijving | Licentie |
 |-----------|-------------|--------|
-| [Geonovum/ogc-checker](https://github.com/Geonovum/ogc-checker) | Validatietool voor OGC services (v1.3.2) | [EUPL-1.2](https://eupl.eu/1.2/en) |
+| [Geonovum/ogc-checker](https://github.com/Geonovum/ogc-checker) | Validatietool voor OGC services (v1.4.0) | [EUPL-1.2](https://eupl.eu/1.2/en) |
 | [Geonovum/ogc-checker Tags](https://github.com/Geonovum/ogc-checker/tags) | Versies van ogc-checker | [EUPL-1.2](https://eupl.eu/1.2/en) |
 
 ## WMS (Web Map Service)
@@ -224,7 +224,7 @@ print(f"Gevonden: {len(data['features'])} panden")
 
 ## ogc-checker Validatie
 
-De [ogc-checker](https://github.com/Geonovum/ogc-checker) (v1.3.2) is een validatietool van Geonovum om OGC-services te controleren op conformiteit.
+De [ogc-checker](https://github.com/Geonovum/ogc-checker) (v1.4.0) is een validatietool van Geonovum om OGC-services te controleren op conformiteit.
 
 De CLI kiest een standaard met `--standard <slug>` en optioneel `--version <id>`; zonder `--version` wordt de laatste **final** versie gebruikt. De oude vlag `--ruleset` werkt nog als deprecated alias en waarschuwt op stderr.
 
@@ -243,7 +243,7 @@ npx @geonovum/ogc-checker --standard ogc-api-features https://service.example.nl
 npx @geonovum/ogc-checker --standard ogc-api-processes --version 2.0.0 ./openapi.json
 ```
 
-> **Let op:** sinds v1.2.0 selecteert `--standard ogc-api-processes` de goedgekeurde 1.0-versie in plaats van de 2.0-draft. Vanaf v1.3.0 vereist de CLI Node 22 of hoger (Node 20 is end-of-life).
+> **Let op:** sinds v1.2.0 selecteert `--standard ogc-api-processes` de goedgekeurde 1.0-versie in plaats van de 2.0-draft. Vanaf v1.3.0 vereist de CLI Node 22 of hoger (Node 20 is end-of-life); sinds v1.4.0 is dat Node 22.18+ of 24+ (Node 23 valt af). v1.4.0 valideert met [OpenLint](https://github.com/openlint/openlint), de community-fork van Spectral; de gecontroleerde eisen en meldingen zijn gelijk gebleven.
 
 ### Via Docker
 
