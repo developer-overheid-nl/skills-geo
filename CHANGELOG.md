@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.7](https://github.com/developer-overheid-nl/skills-geo/compare/v0.4.6...v0.4.7) (2026-11-19)
+
+
+### Opgelost
+
+* werk ogc-checker versie-pin bij naar v1.4.1 in geo-api ([#385](https://github.com/developer-overheid-nl/skills-geo/issues/385)) ([a80b133](https://github.com/developer-overheid-nl/skills-geo/commit/a80b1330653a14d8a634d1bed8747185100bee02))
+
 ## [0.4.6](https://github.com/developer-overheid-nl/skills-geo/compare/v0.4.5...v0.4.6) (2026-10-31)
 
 
